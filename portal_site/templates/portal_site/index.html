@@ -1,0 +1,81 @@
+{% extends "portal_site/base.html" %}
+
+
+{% block content %}
+
+
+
+    <div class="row" >
+      <div class="col-12 col-sm-12">
+        {% if news_slujeb %}
+        <div class="row">
+            <div class="col-12">
+              <h2>Новости какие-то</h2>
+            </div>
+        </div>
+        {% endif %}
+        {% for new in news_slujeb %}
+        <div class="row" style='min-height: 80px; background-color: rgba(2,2,2,.1);'>
+          <div class="col-2 col-sm-2">
+            <img src="media/{{ new.tiny_image }}" alt="Мини-картинка новости" class="img-thumbnail" style='height:100%; width:100%'>
+          </div>
+          <div class="col-8 col-sm-8">
+                <a href="news/{{new.id}}" style="color:red;"><b>{{ new.title }}</b></a>
+                <p> {{ new.description }}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="row" >
+      <div class="col-12 col-sm-12">
+        {% if news_vospit %}
+        <div class="row">
+            <div class="col-12">
+              <h2>Новости какие-то дРУГИЕ</h2>
+            </div>
+        </div>
+        {% endif %}
+        {% for new in news_vospit %}
+        <div class="row" style='min-height: 80px; background-color: rgba(2,2,2,.1);'>
+          <div class="col-2 col-sm-2">
+            <img src="media/{{ new.tiny_image }}" alt="Мини-картинка новости" class="img-thumbnail">
+          </div>
+          <div class="col-8 col-sm-8">
+                <a href="news/{{new.id}}" style="color:red;"><b>{{ new.title }}</b></a>
+                <p> {{ new.description }}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+
+{% endblock %}
+
+{% block right_side %}
+
+<div class="row"  style='background: #f7f7f7; margin: 10px 10px 10px 10px; border-radius: 4px;'>
+  <div class="col-12 col-sm-12">
+    <div class="row" style='min-height: 15px;'>
+      <div class="col-9 col-sm-9">
+             <p style='border-bottom: 1px solid #d5dddf'>Какие-то другие разделы на сайте</p>
+            <a href="news/{{new.id}}" style="color:red;"><b>new.title </b></a>
+            <p> new.description </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row"  style='background: #f7f7f7; margin: 10px 10px 10px 10px; border-radius: 4px;'>
+  <div class="col-12 col-sm-12">
+    <div class="row" style='min-height: 15px;'>
+      <div class="col-9 col-sm-9">
+             <p style='border-bottom: 1px solid #d5dddf'>Какие-то другие разделы на сайте</p>
+            <a href="news/{{new.id}}" style="color:red;"><b>new.title </b></a>
+            <p> new.description </p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
