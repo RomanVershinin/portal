@@ -42,6 +42,8 @@
           </div>
         </li>
       </ul>
+
+<!--
       {% if not user_is_auth %}
       <form class="form-inline my-2 my-lg-0">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">ВХОД</button>
@@ -50,8 +52,9 @@
         <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">ЗАРЕГИСТРИРОВАТЬСЯ</button>
       </form>
       {% endif %}
+-->
       {% if user_is_auth %}
-      <form class="form-inline my-2 my-lg-0">
+      <form class="form-inline my-2 my-lg-0" action='/logout'>
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">ВЫХОД</button>
       </form>
       {% endif %}
